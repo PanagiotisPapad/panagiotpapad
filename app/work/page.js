@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/Button";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
@@ -12,11 +13,11 @@ export default function Work() {
       ? {
           eyebrow: "Selected work",
           intro:
-            "Τα case studies ετοιμάζονται. Μέχρι τότε, αυτή η σελίδα λειτουργεί σαν wall για το είδος δουλειάς που χτίζουμε: brands, websites και growth συστήματα με χαρακτήρα.",
-          noticeTitle: "Case studies loading",
+            "Πραγματικά projects και επιλεγμένες δουλειές που δείχνουν πώς μετατρέπουμε καθαρές επιχειρηματικές ανάγκες σε digital παρουσία που δουλεύει.",
+          noticeTitle: "Live work wall",
           noticeText:
-            "Ανανεώνουμε το portfolio με πρόσφατα projects. Αν θέλεις να δεις παραδείγματα πριν ανέβουν εδώ, στείλε μήνυμα και τα συζητάμε απευθείας.",
-          cardEyebrow: "Coming soon",
+            "Ξεκινάμε με επιλεγμένα projects και συνεχίζουμε να χτίζουμε το portfolio με πρόσφατες δουλειές.",
+          cardEyebrow: "Next case",
           wallTag: "Proof wall",
           stats: [
             "Brand systems",
@@ -29,11 +30,11 @@ export default function Work() {
       : {
           eyebrow: "Selected work",
           intro:
-            "The case studies are being prepared. Until then, this page acts like a wall for the kind of work we build: brands, websites, and growth systems with character.",
-          noticeTitle: "Case studies loading",
+            "Real projects and selected work showing how we turn clear business needs into digital presence that works.",
+          noticeTitle: "Live work wall",
           noticeText:
-            "We are updating the portfolio with recent projects. If you want examples before they go live here, reach out and we can walk through them directly.",
-          cardEyebrow: "Coming soon",
+            "We are starting with selected projects and continuing to build the portfolio with recent work.",
+          cardEyebrow: "Next case",
           wallTag: "Proof wall",
           stats: [
             "Brand systems",
@@ -44,40 +45,154 @@ export default function Work() {
           finalEyebrow: "Got a project?",
         };
 
-  const projects = [
-    {
-      id: 1,
-      title: t.home.work.projectTitle,
-      category: "Branding & Web",
-      description: t.home.work.projectText,
-      number: "01",
-      accent: "rotate-1",
-    },
-    {
-      id: 2,
-      title: t.home.work.projectTitle,
-      category: "Social Media",
-      description: t.home.work.projectText,
-      number: "02",
-      accent: "-rotate-1",
-    },
-    {
-      id: 3,
-      title: t.home.work.projectTitle,
-      category: "Web Development",
-      description: t.home.work.projectText,
-      number: "03",
-      accent: "-rotate-2",
-    },
-    {
-      id: 4,
-      title: t.home.work.projectTitle,
-      category: "Branding",
-      description: t.home.work.projectText,
-      number: "04",
-      accent: "rotate-2",
-    },
-  ];
+  const projects =
+    language === "el"
+      ? [
+          {
+            id: "beetle-pest-control",
+            title: "Beetle Pest Control",
+            category: "Branding, Website & Local SEO",
+            description:
+              "Brand identity και website για εταιρεία απεντόμωσης στη Θεσσαλονίκη, με καθαρές υπηρεσίες, άμεση επικοινωνία, Google reviews, FAQ και δομή φτιαγμένη για local SEO.",
+            number: "01",
+            accent: "rotate-1",
+            href: "https://beetlepestcontrol.gr/",
+            label: "Live project",
+            visual: "BEETLE",
+            meta: "Pest control · Thessaloniki",
+            logo: "/projects/beetle-logo.svg",
+            logoAlt: "Beetle Pest Control logo",
+            logoClass: "max-h-10",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+          {
+            id: "vasdiaris",
+            title: "Βασδιάρης",
+            category: "E-commerce & SEO",
+            description:
+              "E-shop για παιχνίδια, εποχιακά και είδη σπιτιού, με δυνατό εμπορικό περιεχόμενο και οργανική κατάταξη #1 για Παιχνίδια Κατερίνη.",
+            number: "02",
+            accent: "-rotate-1",
+            href: "https://vasdiaris.com/",
+            label: "Live project",
+            visual: "VASDIARIS",
+            meta: "Toys e-shop · Katerini",
+            logo: "/projects/vasdiaris-logo.png",
+            logoAlt: "Βασδιάρης logo",
+            logoClass: "max-h-9",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+          {
+            id: "zookal",
+            title: "Zookal",
+            category: "Website & Product Structure",
+            description:
+              "Website για βιοτεχνία ζωοτροφών στην Κατερίνη, με καθαρή παρουσίαση εταιρίας, προϊόντων, κατηγοριών και στοιχείων επικοινωνίας.",
+            number: "03",
+            accent: "-rotate-2",
+            href: "https://zookal.gr/",
+            label: "Live project",
+            visual: "ZOOKAL",
+            meta: "Animal feed · Katerini",
+            logo: "/projects/zookal-logo.png",
+            logoAlt: "Zookal logo",
+            logoClass: "max-h-9",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+          {
+            id: "nodifit",
+            title: "Nodifit",
+            category: "WIP Software Platform",
+            description:
+              "Platform σε εξέλιξη για να βρίσκουν οι χρήστες τον ιδανικό fitness coach στην Ελλάδα. Product thinking, user flows και real software build.",
+            number: "04",
+            accent: "rotate-2",
+            href: "https://nodifit.com/",
+            label: "WIP platform",
+            visual: "Nodifit",
+            visualClass:
+              "text-2xl font-black tracking-[-0.08em] text-[#06b6d4] [font-family:Inter,var(--font-geist-sans),sans-serif]",
+            meta: "Fitness platform · Greece",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+        ]
+      : [
+          {
+            id: "beetle-pest-control",
+            title: "Beetle Pest Control",
+            category: "Branding, Website & Local SEO",
+            description:
+              "Brand identity and website for a professional pest control company in Thessaloniki, built around clear service pages, fast contact paths, Google reviews, FAQs, and local SEO structure.",
+            number: "01",
+            accent: "rotate-1",
+            href: "https://beetlepestcontrol.gr/",
+            label: "Live project",
+            visual: "BEETLE",
+            meta: "Pest control · Thessaloniki",
+            logo: "/projects/beetle-logo.svg",
+            logoAlt: "Beetle Pest Control logo",
+            logoClass: "max-h-10",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+          {
+            id: "vasdiaris",
+            title: "Vasdiaris",
+            category: "E-commerce & SEO",
+            description:
+              "E-commerce website for toys, seasonal products, and home goods, with strong commercial content and a #1 organic ranking for Παιχνίδια Κατερίνη.",
+            number: "02",
+            accent: "-rotate-1",
+            href: "https://vasdiaris.com/",
+            label: "Live project",
+            visual: "VASDIARIS",
+            meta: "Toys e-shop · Katerini",
+            logo: "/projects/vasdiaris-logo.png",
+            logoAlt: "Vasdiaris logo",
+            logoClass: "max-h-9",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+          {
+            id: "zookal",
+            title: "Zookal",
+            category: "Website & Product Structure",
+            description:
+              "Website for an animal feed manufacturer in Katerini, structured around company credibility, product categories, certifications, and contact paths.",
+            number: "03",
+            accent: "-rotate-2",
+            href: "https://zookal.gr/",
+            label: "Live project",
+            visual: "ZOOKAL",
+            meta: "Animal feed · Katerini",
+            logo: "/projects/zookal-logo.png",
+            logoAlt: "Zookal logo",
+            logoClass: "max-h-9",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+          {
+            id: "nodifit",
+            title: "Nodifit",
+            category: "WIP Software Platform",
+            description:
+              "Platform in progress for helping people find the right fitness coach in Greece. Product thinking, user flows, and real software build.",
+            number: "04",
+            accent: "rotate-2",
+            href: "https://nodifit.com/",
+            label: "WIP platform",
+            visual: "Nodifit",
+            visualClass:
+              "text-2xl font-black tracking-[-0.08em] text-[#06b6d4] [font-family:Inter,var(--font-geist-sans),sans-serif]",
+            meta: "Fitness platform · Greece",
+            logoWrapClass: "rounded-2xl px-3 py-2",
+            isExternal: true,
+          },
+        ];
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f8f5ee] text-neutral-950">
@@ -156,43 +271,93 @@ export default function Work() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <Link
-                key={project.id}
-                href="/contact"
-                className="group overflow-hidden rounded-4xl border-2 border-neutral-950 bg-[#f8f5ee] text-neutral-950 shadow-[8px_8px_0_rgba(37,99,235,0.36)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[13px_13px_0_rgba(37,99,235,0.55)]"
-              >
-                <div className="relative min-h-72 overflow-hidden bg-neutral-950 p-6 spray-texture">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_22%,rgba(37,99,235,0.52),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_50%)]" />
-                  <div className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-600 shadow-[5px_5px_0_#2563eb]">
-                    {copy.cardEyebrow}
-                  </div>
-                  <div
-                    className={`absolute bottom-8 left-8 h-40 w-40 rounded-4xl border-2 border-white/75 bg-blue-600 shadow-[10px_10px_0_rgba(255,255,255,0.12)] transition-transform duration-500 group-hover:scale-105 ${project.accent}`}
-                  >
-                    <div className="absolute inset-4 rounded-3xl border border-white/30" />
-                    <div className="absolute bottom-6 left-6 bg-white px-3 py-2 text-3xl font-black tracking-[-0.08em] text-neutral-950">
-                      {project.number}
+            {projects.map((project) => {
+              const card = (
+                <>
+                  <div className="relative min-h-72 overflow-hidden bg-neutral-950 p-6 spray-texture">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_22%,rgba(37,99,235,0.52),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_50%)]" />
+                    <div className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-600 shadow-[5px_5px_0_#2563eb]">
+                      {project.label}
+                    </div>
+                    <div
+                      className={`absolute bottom-8 left-8 h-40 w-40 rounded-4xl border-2 border-white/75 bg-blue-600 p-5 shadow-[10px_10px_0_rgba(255,255,255,0.12)] transition-transform duration-500 group-hover:scale-105 ${project.accent}`}
+                    >
+                      <div className="flex h-full flex-col justify-between">
+                        <div className="font-mono text-[0.58rem] font-black uppercase tracking-[0.22em] text-white/60">
+                          {project.meta}
+                        </div>
+                        <div className="space-y-3">
+                          <div
+                            className={`inline-flex max-w-full bg-white shadow-[5px_5px_0_rgba(15,23,42,0.22)] ${project.logoWrapClass}`}
+                          >
+                            {project.logo ? (
+                              <Image
+                                src={project.logo}
+                                alt={project.logoAlt}
+                                width={160}
+                                height={64}
+                                unoptimized={project.logo.endsWith(".svg")}
+                                className={`${project.logoClass} object-contain`}
+                              />
+                            ) : (
+                              <span
+                                className={
+                                  project.visualClass ||
+                                  "text-2xl font-black uppercase leading-none tracking-[-0.12em] text-neutral-950"
+                                }
+                              >
+                                {project.visual}
+                              </span>
+                            )}
+                          </div>
+                          <div className="inline-flex bg-white px-3 py-1.5 text-2xl font-black tracking-[-0.08em] text-neutral-950">
+                            {project.number}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="p-6 sm:p-8 lg:p-10">
-                  <div className="mb-5 inline-flex -rotate-1 bg-blue-600 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-white">
-                    {project.category}
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="mb-5 inline-flex -rotate-1 bg-blue-600 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-white">
+                      {project.category}
+                    </div>
+                    <h3 className="text-3xl font-black leading-none tracking-[-0.06em] text-neutral-950 transition-colors group-hover:text-blue-600 sm:text-4xl">
+                      {project.title}
+                    </h3>
+                    <p className="mt-5 text-base font-medium leading-relaxed text-neutral-700 sm:text-lg">
+                      {project.description}
+                    </p>
+                    <div className="mt-6 inline-flex items-center gap-3 text-lg font-black text-neutral-950 transition-all duration-300 group-hover:gap-5 group-hover:text-blue-600">
+                      <span>
+                        {project.isExternal
+                          ? "View live site →"
+                          : t.home.work.caseStudy}
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="text-3xl font-black leading-none tracking-[-0.06em] text-neutral-950 transition-colors group-hover:text-blue-600 sm:text-4xl">
-                    {project.title}
-                  </h3>
-                  <p className="mt-5 text-base font-medium leading-relaxed text-neutral-700 sm:text-lg">
-                    {project.description}
-                  </p>
-                  <div className="mt-6 inline-flex items-center gap-3 text-lg font-black text-neutral-950 transition-all duration-300 group-hover:gap-5 group-hover:text-blue-600">
-                    <span>{t.home.work.caseStudy}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </>
+              );
+
+              const className =
+                "group overflow-hidden rounded-4xl border-2 border-neutral-950 bg-[#f8f5ee] text-neutral-950 shadow-[8px_8px_0_rgba(37,99,235,0.36)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[13px_13px_0_rgba(37,99,235,0.55)]";
+
+              return project.isExternal ? (
+                <a
+                  key={project.id}
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {card}
+                </a>
+              ) : (
+                <Link key={project.id} href={project.href} className={className}>
+                  {card}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

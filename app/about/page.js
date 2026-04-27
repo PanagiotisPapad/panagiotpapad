@@ -8,39 +8,72 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function About() {
   const { t, language } = useLanguage();
 
-  const copy = language === "el"
-    ? {
-        eyebrow: "About the studio",
-        intro: "Ένα μικρό studio με καθαρό τρόπο δουλειάς: στρατηγική σκέψη, design με χαρακτήρα και υλοποίηση που στέκεται επαγγελματικά.",
-        sticker: "Trust the process",
-        noteTitle: "Built from the slide up",
-        noteText: "Το Blue Slide κρατάει την ενέργεια της γειτονιάς, αλλά τη μεταφράζει σε σοβαρή ψηφιακή παρουσία για επιχειρήσεις που θέλουν κάτι δικό τους.",
-        approachEyebrow: "How we move",
-        valuesEyebrow: "What stays steady",
-        finalEyebrow: "Start the next move",
-      }
-    : {
-        eyebrow: "About the studio",
-        intro: "A small studio with a clear way of working: strategic thinking, design with character, and execution that feels professional.",
-        sticker: "Trust the process",
-        noteTitle: "Built from the slide up",
-        noteText: "Blue Slide keeps the energy of the neighborhood, then translates it into serious digital presence for businesses that want something of their own.",
-        approachEyebrow: "How we move",
-        valuesEyebrow: "What stays steady",
-        finalEyebrow: "Start the next move",
-      };
+  const copy =
+    language === "el"
+      ? {
+          eyebrow: "About the studio",
+          intro:
+            "Ένα μικρό studio με καθαρό τρόπο δουλειάς: στρατηγική σκέψη, design με χαρακτήρα και υλοποίηση που στέκεται επαγγελματικά.",
+          sticker: "Trust the process",
+          noteTitle: "Built from the slide up",
+          noteText:
+            "Το Blue Slide κρατάει την ενέργεια της γειτονιάς, αλλά τη μεταφράζει σε σοβαρή ψηφιακή παρουσία για επιχειρήσεις που θέλουν κάτι δικό τους.",
+          approachEyebrow: "How we move",
+          valuesEyebrow: "What stays steady",
+          finalEyebrow: "Start the next move",
+        }
+      : {
+          eyebrow: "About the studio",
+          intro:
+            "A small studio with a clear way of working: strategic thinking, design with character, and execution that feels professional.",
+          sticker: "Trust the process",
+          noteTitle: "Built from the slide up",
+          noteText:
+            "Blue Slide keeps the energy of the neighborhood, then translates it into serious digital presence for businesses that want something of their own.",
+          approachEyebrow: "How we move",
+          valuesEyebrow: "What stays steady",
+          finalEyebrow: "Start the next move",
+        };
 
   const steps = [
-    { number: "01", title: t.about.approach.step1Title, text: t.about.approach.step1Text },
-    { number: "02", title: t.about.approach.step2Title, text: t.about.approach.step2Text },
-    { number: "03", title: t.about.approach.step3Title, text: t.about.approach.step3Text },
-    { number: "04", title: t.about.approach.step4Title, text: t.about.approach.step4Text },
+    {
+      number: "01",
+      title: t.about.approach.step1Title,
+      text: t.about.approach.step1Text,
+    },
+    {
+      number: "02",
+      title: t.about.approach.step2Title,
+      text: t.about.approach.step2Text,
+    },
+    {
+      number: "03",
+      title: t.about.approach.step3Title,
+      text: t.about.approach.step3Text,
+    },
+    {
+      number: "04",
+      title: t.about.approach.step4Title,
+      text: t.about.approach.step4Text,
+    },
   ];
 
   const values = [
-    { type: "clarity", title: t.about.values.value1, text: t.about.values.value1Text },
-    { type: "quality", title: t.about.values.value2, text: t.about.values.value2Text },
-    { type: "results", title: t.about.values.value3, text: t.about.values.value3Text },
+    {
+      type: "clarity",
+      title: t.about.values.value1,
+      text: t.about.values.value1Text,
+    },
+    {
+      type: "quality",
+      title: t.about.values.value2,
+      text: t.about.values.value2Text,
+    },
+    {
+      type: "results",
+      title: t.about.values.value3,
+      text: t.about.values.value3Text,
+    },
   ];
 
   return (
@@ -68,7 +101,7 @@ export default function About() {
 
           <div className="lg:col-span-4 lg:pt-12">
             <div className="relative rotate-2 rounded-4xl border-2 border-neutral-950 bg-neutral-950 p-5 text-white shadow-[14px_14px_0_rgba(37,99,235,0.24)] animate-[stickerFloat_6s_ease-in-out_infinite]">
-              <div className="absolute -left-5 top-8 -rotate-12 rounded-full bg-white px-4 py-2 font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-600 shadow-[5px_5px_0_rgba(255,255,255,0.18)]">
+              <div className="absolute z-10  -left-5 top-8 -rotate-12 rounded-full bg-white px-4 py-2 font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-600 shadow-[5px_5px_0_rgba(255,255,255,0.18)]">
                 {copy.sticker}
               </div>
               <div className="rounded-3xl border border-white/10 bg-white/5 p-6 spray-texture">

@@ -2,6 +2,7 @@
 
 import Button from "@/components/Button";
 import Logo from "@/components/Logo";
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
@@ -21,7 +22,7 @@ export default function Home() {
       ? {
           kicker: "Digital studio",
           heroNote:
-            "Στρατηγική, design, websites και growth για επιχειρήσεις που θέλουν να δείχνουν σοβαρές χωρίς να μοιάζουν ίδιες με όλους.",
+            "Στρατηγική, design, websites και growth για επιχειρήσεις που ξεχωρίζουν.",
           secondaryCta: "Δες υπηρεσίες",
           trusted: "Custom αισθητική. Καθαρή υλοποίηση. Μετρήσιμο growth.",
           slideLabel: "The Blue Slide",
@@ -31,16 +32,15 @@ export default function Home() {
               <span className="inline-block -rotate-2 bg-blue-600 px-1.5 py-0.5 text-white shadow-[3px_3px_0_#111827]">
                 blend in
               </span>
-              .
             </>
           ),
           sticker: "Disrupting the pattern",
           proofTitle: "Street energy, business discipline",
           proofText:
-            "Παίρνουμε την ενέργεια από murals, stickers και mixtape culture, αλλά την κρατάμε καθαρή, γρήγορη και αξιόπιστη για πραγματικές επιχειρήσεις.",
+            "Παίρνουμε την ενέργεια από murals, stickers και street culture, αλλά την κρατάμε καθαρή και αξιόπιστη για ξεχωριστές επιχειρήσεις.",
           servicesEyebrow: "What we build",
           workEyebrow: "Studio method",
-          trustEyebrow: "Why it works",
+          trustEyebrow: "Η κουλτούρα",
           finalEyebrow: "Blue Slide Studio",
         }
       : {
@@ -56,7 +56,6 @@ export default function Home() {
               <span className="inline-block -rotate-2 bg-blue-600 px-1.5 py-0.5 text-white shadow-[3px_3px_0_#111827]">
                 blend in
               </span>
-              .
             </>
           ),
           sticker: "Disrupting the pattern",
@@ -65,7 +64,7 @@ export default function Home() {
             "We borrow the energy of murals, stickers, and mixtape culture, then keep the experience clean, fast, and trustworthy for real businesses.",
           servicesEyebrow: "What we build",
           workEyebrow: "Studio method",
-          trustEyebrow: "Why it works",
+          trustEyebrow: "The culture",
           finalEyebrow: "Blue Slide Studio",
         };
 
@@ -104,6 +103,109 @@ export default function Home() {
       text: t.home.services.service3Text,
     },
   ];
+
+  const featuredProjects =
+    language === "el"
+      ? [
+          {
+            title: "Beetle Pest Control",
+            category: "Branding, Website & Local SEO",
+            description:
+              "Brand identity και website για εταιρεία απεντόμωσης στη Θεσσαλονίκη, με καθαρές υπηρεσίες, γρήγορη επικοινωνία, reviews, FAQ και local SEO δομή.",
+            href: "https://beetlepestcontrol.gr/",
+            logo: "/projects/beetle-logo.svg",
+            logoAlt: "Beetle Pest Control logo",
+            logoClass: "max-h-16",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Pest control · Θεσσαλονίκη",
+          },
+          {
+            title: "Βασδιάρης",
+            category: "E-commerce & SEO",
+            description:
+              "E-shop για παιχνίδια, εποχιακά και είδη σπιτιού, με δυνατό εμπορικό περιεχόμενο και οργανική κατάταξη #1 για Παιχνίδια Κατερίνη.",
+            href: "https://vasdiaris.com/",
+            logo: "/projects/vasdiaris-logo.png",
+            logoAlt: "Βασδιάρης logo",
+            logoClass: "max-h-14",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Toys e-shop · Κατερίνη",
+          },
+          {
+            title: "Zookal",
+            category: "Website & Product Structure",
+            description:
+              "Website για βιοτεχνία ζωοτροφών στην Κατερίνη, με καθαρή παρουσίαση εταιρίας, προϊόντων, κατηγοριών και στοιχείων επικοινωνίας.",
+            href: "https://zookal.gr/",
+            logo: "/projects/zookal-logo.png",
+            logoAlt: "Zookal logo",
+            logoClass: "max-h-14",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Animal feed · Κατερίνη",
+          },
+          {
+            title: "Nodifit",
+            category: "WIP Software Platform",
+            description:
+              "Platform σε εξέλιξη για να βρίσκουν οι χρήστες τον ιδανικό fitness coach στην Ελλάδα. Product thinking, user flows και real software build.",
+            href: "https://nodifit.com/",
+            visual: "Nodifit",
+            visualClass:
+              "text-4xl font-black tracking-[-0.08em] text-[#06b6d4] [font-family:Inter,var(--font-geist-sans),sans-serif]",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Fitness platform · Greece",
+          },
+        ]
+      : [
+          {
+            title: "Beetle Pest Control",
+            category: "Branding, Website & Local SEO",
+            description:
+              "Brand identity and website for a professional pest control company in Thessaloniki, built around clear service pages, fast contact paths, reviews, FAQs, and local SEO structure.",
+            href: "https://beetlepestcontrol.gr/",
+            logo: "/projects/beetle-logo.svg",
+            logoAlt: "Beetle Pest Control logo",
+            logoClass: "max-h-16",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Pest control · Thessaloniki",
+          },
+          {
+            title: "Vasdiaris",
+            category: "E-commerce & SEO",
+            description:
+              "E-commerce website for toys, seasonal products, and home goods, with strong commercial content and a #1 organic ranking for Παιχνίδια Κατερίνη.",
+            href: "https://vasdiaris.com/",
+            logo: "/projects/vasdiaris-logo.png",
+            logoAlt: "Vasdiaris logo",
+            logoClass: "max-h-14",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Toys e-shop · Katerini",
+          },
+          {
+            title: "Zookal",
+            category: "Website & Product Structure",
+            description:
+              "Website for an animal feed manufacturer in Katerini, structured around company credibility, product categories, certifications, and contact paths.",
+            href: "https://zookal.gr/",
+            logo: "/projects/zookal-logo.png",
+            logoAlt: "Zookal logo",
+            logoClass: "max-h-14",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Animal feed · Katerini",
+          },
+          {
+            title: "Nodifit",
+            category: "WIP Software Platform",
+            description:
+              "Platform in progress for helping people find the right fitness coach in Greece. Product thinking, user flows, and real software build.",
+            href: "https://nodifit.com/",
+            visual: "Nodifit",
+            visualClass:
+              "text-4xl font-black tracking-[-0.08em] text-[#06b6d4] [font-family:Inter,var(--font-geist-sans),sans-serif]",
+            logoWrapClass: "rounded-2xl px-5 py-4",
+            meta: "Fitness platform · Greece",
+          },
+        ];
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f8f5ee] text-neutral-950">
@@ -296,40 +398,71 @@ export default function Home() {
             </p>
           </div>
 
-          <Link
-            href="/work"
-            className="group grid grid-cols-1 overflow-hidden border-2 border-neutral-950 bg-[#f8f5ee] shadow-[10px_10px_0_#111827] transition-all duration-300 hover:-translate-y-2 hover:shadow-[16px_16px_0_#2563eb] lg:grid-cols-2"
-          >
-            <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-14">
-              <div className="mb-6 inline-flex w-fit -rotate-2 bg-neutral-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.22em] text-white">
-                Featured Project
-              </div>
-              <h3 className="text-4xl font-black leading-none tracking-[-0.06em] text-neutral-950 transition-colors duration-300 group-hover:text-blue-600 sm:text-5xl">
-                {t.home.work.projectTitle}
-              </h3>
-              <p className="mt-6 text-lg font-medium leading-relaxed text-neutral-700 sm:text-xl">
-                {t.home.work.projectText}
-              </p>
-              <div className="mt-8 inline-flex items-center gap-3 text-lg font-black text-neutral-950 transition-all duration-300 group-hover:gap-5 sm:text-xl">
-                <span>{t.home.work.caseStudy}</span>
-              </div>
-            </div>
-
-            <div className="relative min-h-96 overflow-hidden bg-neutral-950 p-6 spray-texture sm:p-10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(37,99,235,0.5),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_50%)]" />
-              <div className="relative flex h-full min-h-80 items-center justify-center">
-                <div className="relative h-64 w-64 rounded-4xl border-2 border-white/80 bg-blue-600 shadow-[16px_16px_0_rgba(255,255,255,0.12)] transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105 sm:h-80 sm:w-80">
-                  <div className="absolute inset-5 rounded-3xl border border-white/30" />
-                  <div className="absolute left-12 top-14 h-28 w-6 rounded-full bg-white" />
-                  <div className="absolute left-12 top-14 h-6 w-32 rounded-full bg-white" />
-                  <div className="absolute left-20 top-24 h-36 w-24 origin-top-left rotate-20 rounded-full border-14 border-white border-l-transparent border-t-transparent" />
-                  <div className="absolute bottom-10 left-10 rotate-[-8deg] bg-white px-4 py-2 text-2xl font-black uppercase tracking-[-0.08em] text-neutral-950">
-                    BSS
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {featuredProjects.map((project, index) => (
+              <a
+                key={project.href}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group overflow-hidden border-2 border-neutral-950 bg-[#f8f5ee] shadow-[10px_10px_0_#111827] transition-all duration-300 hover:-translate-y-2 hover:shadow-[16px_16px_0_#2563eb]"
+              >
+                <div className="relative min-h-72 overflow-hidden bg-neutral-950 p-6 spray-texture sm:p-8">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(37,99,235,0.5),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_50%)]" />
+                  <div className="relative flex min-h-56 items-center justify-center">
+                    <div
+                      className={`relative flex h-44 w-52 items-center justify-center rounded-4xl border-2 border-white/80 bg-blue-600 p-5 shadow-[12px_12px_0_rgba(255,255,255,0.12)] transition-transform duration-500 group-hover:scale-105 sm:h-52 sm:w-60 ${
+                        index === 0 ? "rotate-2 group-hover:rotate-3" : "-rotate-2 group-hover:-rotate-3"
+                      }`}
+                    >
+                      <div className="absolute inset-4 rounded-3xl border border-white/25" />
+                      <div
+                        className={`relative bg-white shadow-[6px_6px_0_rgba(15,23,42,0.22)] ${project.logoWrapClass}`}
+                      >
+                        {project.logo ? (
+                          <Image
+                            src={project.logo}
+                            alt={project.logoAlt}
+                            width={220}
+                            height={84}
+                            unoptimized={project.logo.endsWith(".svg")}
+                            className={`${project.logoClass} object-contain`}
+                          />
+                        ) : (
+                          <span
+                            className={
+                              project.visualClass ||
+                              "text-4xl font-black uppercase leading-none tracking-[-0.12em] text-neutral-950"
+                            }
+                          >
+                            {project.visual}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </Link>
+
+                <div className="p-6 sm:p-8 lg:p-10">
+                  <div className="mb-5 inline-flex -rotate-1 bg-neutral-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-white">
+                    {project.category}
+                  </div>
+                  <div className="mb-4 font-mono text-xs font-black uppercase tracking-[0.22em] text-blue-600">
+                    {project.meta}
+                  </div>
+                  <h3 className="text-4xl font-black leading-none tracking-[-0.06em] text-neutral-950 transition-colors duration-300 group-hover:text-blue-600 sm:text-5xl">
+                    {project.title}
+                  </h3>
+                  <p className="mt-6 text-lg font-medium leading-relaxed text-neutral-700">
+                    {project.description}
+                  </p>
+                  <div className="mt-8 inline-flex items-center gap-3 text-lg font-black text-neutral-950 transition-all duration-300 group-hover:gap-5 group-hover:text-blue-600">
+                    <span>View live site →</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
 
           <div className="mt-12 sm:mt-16 lg:mt-20">
             <Link
