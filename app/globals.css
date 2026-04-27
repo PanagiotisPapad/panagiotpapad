@@ -68,4 +68,68 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes sprayDrift {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(18px, -16px, 0) rotate(3deg);
+    }
+  }
+
+  @keyframes stickerFloat {
+    0%, 100% {
+      transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+
+  @keyframes markerWipe {
+    from {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    to {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
+@layer utilities {
+  .spray-texture {
+    background-image:
+      radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.22) 0 2px, transparent 2px),
+      radial-gradient(circle at 76% 34%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px),
+      radial-gradient(circle at 42% 78%, rgba(15, 23, 42, 0.12) 0 1.5px, transparent 1.5px);
+    background-size: 38px 38px, 24px 24px, 30px 30px;
+  }
+
+  .tag-shadow {
+    text-shadow:
+      3px 3px 0 rgba(37, 99, 235, 0.28),
+      -1px -1px 0 rgba(255, 255, 255, 0.72);
+  }
+
+  .marker-highlight {
+    position: relative;
+    display: inline-block;
+  }
+
+  .marker-highlight::after {
+    position: absolute;
+    right: -0.08em;
+    bottom: 0.07em;
+    left: -0.08em;
+    z-index: -1;
+    height: 0.32em;
+    content: "";
+    background: #2563eb;
+    border-radius: 999px;
+    opacity: 0.22;
+    animation: markerWipe 0.8s ease-out 0.45s both;
+  }
 }

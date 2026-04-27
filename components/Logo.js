@@ -1,27 +1,21 @@
 export default function Logo({ className = "" }) {
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* Slide icon - inspired by playground slide */}
-      <div className="relative h-8 w-8">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Abstract slide shape */}
-          <path
-            d="M6 4 L22 4 L28 28 L12 28 Z"
-            fill="currentColor"
-            opacity="0.15"
-          />
-          <path
-            d="M8 4 L24 4 L26 24"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-      {/* Text */}
-      <span className="text-xl font-bold tracking-tight">
-        Blue Slide
+    <div
+      className={`group inline-flex items-center gap-3 ${className}`}
+      aria-label="Blue Slide Studio"
+    >
+      <span className="h-3 w-3 shrink-0 rounded-full bg-blue-600 shadow-[3px_3px_0_currentColor] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110" />
+      <span className="leading-none">
+        <span className="block text-[1.3rem] font-black uppercase tracking-[-0.08em] [text-shadow:2px_2px_0_rgba(37,99,235,0.24)] sm:text-[1.5rem]">
+          Blue{" "}
+          <span className="relative inline-block text-blue-600 [text-shadow:2px_2px_0_rgba(15,23,42,0.22)]">
+            <span className="relative z-10">Slide</span>
+            <span className="absolute inset-x-0 bottom-0 z-0 h-2 -rotate-1 bg-blue-600/18" />
+          </span>
+        </span>
+        <span className="block font-mono text-[0.48rem] font-black uppercase tracking-[0.5em] text-current/45">
+          Studio
+        </span>
       </span>
     </div>
   );
