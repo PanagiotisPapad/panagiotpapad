@@ -27,7 +27,7 @@ export default function Home() {
           slideLabel: "The Blue Slide",
           slideCaption: (
             <>
-              Για όσους δεν κάνουν{" "}
+              For the ones who don&apos;t{" "}
               <span className="inline-block -rotate-2 bg-blue-600 px-1.5 py-0.5 text-white shadow-[3px_3px_0_#111827]">
                 blend in
               </span>
