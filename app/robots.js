@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://blueslidestudio.gr/sitemap.xml",
+    sitemap: "https://blueslide.gr/sitemap.xml",
   };
 }

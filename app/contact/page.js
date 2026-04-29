@@ -110,7 +110,7 @@ export default function Contact() {
                   @
                 </div>
                 <h2 className="text-2xl font-black leading-none tracking-[-0.05em]">
-                  hello@blueslide.studio
+                  info@blueslide.gr
                 </h2>
                 <p className="mt-5 text-base font-medium leading-relaxed text-neutral-300">
                   {copy.response}
@@ -125,14 +125,14 @@ export default function Contact() {
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-blue-500 to-transparent" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <a
-            href="mailto:hello@blueslide.studio"
+            href="mailto:info@blueslide.gr"
             className="group block rounded-4xl border border-white/10 bg-white/4 p-6 shadow-[10px_10px_0_rgba(37,99,235,0.38)] transition-all duration-300 hover:-translate-y-2 hover:border-blue-400/70 hover:bg-white/[0.07] sm:p-10 lg:p-14"
           >
             <div className="mb-8 inline-flex -rotate-2 bg-blue-600 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.22em] text-white">
               Email
             </div>
             <div className="wrap-break-word text-4xl font-black leading-[0.9] tracking-[-0.07em] text-white transition-colors duration-300 group-hover:text-blue-400 sm:text-6xl lg:text-8xl">
-              hello@blueslide.studio
+              info@blueslide.gr
             </div>
             <div className="mt-8 inline-flex items-center gap-3 text-lg font-black text-neutral-300 transition-all duration-300 group-hover:gap-5 group-hover:text-white sm:text-xl">
               <span>{copy.emailNote}</span>

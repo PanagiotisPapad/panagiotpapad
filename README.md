@@ -114,7 +114,7 @@ pnpm start
 ## Customization Guide
 
 ### Update Business Information
-1. **Email**: Change `hello@Blue Slidestudio.gr` in:
+1. **Email**: Change `info@blueslide.gr` in:
    - `components/Footer.js`
    - `app/contact/page.js`
 

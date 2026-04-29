@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { href: "mailto:hello@blueslidestudio.gr", label: "hello@blueslidestudio.gr" },
+    { href: "mailto:info@blueslide.gr", label: "info@blueslide.gr" },
     { href: "https://linkedin.com", label: "LinkedIn" },
     { href: "https://instagram.com", label: "Instagram" },
   ];

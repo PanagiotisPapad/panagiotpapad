@@ -1,4 +1,4 @@
-const baseUrl = "https://blueslidestudio.gr";
+const baseUrl = "https://blueslide.gr";
 
 const routes = ["", "/services", "/work", "/about", "/contact"];
 
