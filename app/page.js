@@ -1,11 +1,13 @@
 "use client";
 
 import Button from "@/components/Button";
-import Logo from "@/components/Logo";
-import Image from "next/image";
+import ProjectBanner from "@/components/ProjectBanner";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
+
+const projectLinkClass =
+  "group overflow-hidden border-2 border-neutral-950 bg-[#f8f5ee] text-neutral-950 shadow-[10px_10px_0_#111827] transition-all duration-300 hover:-translate-y-2 hover:shadow-[16px_16px_0_#2563eb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600";
 
 export default function Home() {
   const { t, language } = useLanguage();
@@ -118,6 +120,7 @@ export default function Home() {
             logoClass: "max-h-16",
             logoWrapClass: "rounded-2xl px-5 py-4",
             meta: "Pest control · Θεσσαλονίκη",
+            role: "pair",
           },
           {
             title: "Βασδιάρης",
@@ -130,18 +133,16 @@ export default function Home() {
             logoClass: "max-h-14",
             logoWrapClass: "rounded-2xl px-5 py-4",
             meta: "Toys e-shop · Κατερίνη",
+            role: "pair",
           },
           {
-            title: "Zookal",
-            category: "Website & Product Structure",
+            title: "Αλεξάνδρα Αντωνιάδου",
+            category: "Website & Visual Identity",
             description:
-              "Website για βιοτεχνία ζωοτροφών στην Κατερίνη, με καθαρή παρουσίαση εταιρίας, προϊόντων, κατηγοριών και στοιχείων επικοινωνίας.",
-            href: "https://zookal.gr/",
-            logo: "/projects/zookal-logo.png",
-            logoAlt: "Zookal logo",
-            logoClass: "max-h-14",
-            logoWrapClass: "rounded-2xl px-5 py-4",
-            meta: "Animal feed · Κατερίνη",
+              "Ιστοσελίδα για την ψυχολόγο Αλεξάνδρα Αντωνιάδου στη Θεσσαλονίκη. Ήρεμη τυπογραφία, σαφείς υπηρεσίες και άμεση επικοινωνία για ατομική θεραπεία, θεραπεία ζεύγους, οικογενειακή θεραπεία και online συνεδρίες.",
+            href: "https://antoniadoualex.gr/",
+            meta: "Ψυχοθεραπεία · Θεσσαλονίκη",
+            role: "feature",
           },
           {
             title: "Nodifit",
@@ -154,6 +155,7 @@ export default function Home() {
               "text-4xl font-black tracking-[-0.08em] text-[#06b6d4] [font-family:Inter,var(--font-geist-sans),sans-serif]",
             logoWrapClass: "rounded-2xl px-5 py-4",
             meta: "Fitness platform · Greece",
+            role: "closer",
           },
         ]
       : [
@@ -168,6 +170,7 @@ export default function Home() {
             logoClass: "max-h-16",
             logoWrapClass: "rounded-2xl px-5 py-4",
             meta: "Pest control · Thessaloniki",
+            role: "pair",
           },
           {
             title: "Vasdiaris",
@@ -180,18 +183,16 @@ export default function Home() {
             logoClass: "max-h-14",
             logoWrapClass: "rounded-2xl px-5 py-4",
             meta: "Toys e-shop · Katerini",
+            role: "pair",
           },
           {
-            title: "Zookal",
-            category: "Website & Product Structure",
+            title: "Alexandra Antoniadou",
+            category: "Website & Visual Identity",
             description:
-              "Website for an animal feed manufacturer in Katerini, structured around company credibility, product categories, certifications, and contact paths.",
-            href: "https://zookal.gr/",
-            logo: "/projects/zookal-logo.png",
-            logoAlt: "Zookal logo",
-            logoClass: "max-h-14",
-            logoWrapClass: "rounded-2xl px-5 py-4",
-            meta: "Animal feed · Katerini",
+              "Website for psychologist Alexandra Antoniadou in Thessaloniki. Quiet typography, clear services, and a direct way to get in touch for individual, couples, family, and online sessions.",
+            href: "https://antoniadoualex.gr/",
+            meta: "Psychotherapy · Thessaloniki",
+            role: "feature",
           },
           {
             title: "Nodifit",
@@ -204,6 +205,7 @@ export default function Home() {
               "text-4xl font-black tracking-[-0.08em] text-[#06b6d4] [font-family:Inter,var(--font-geist-sans),sans-serif]",
             logoWrapClass: "rounded-2xl px-5 py-4",
             meta: "Fitness platform · Greece",
+            role: "closer",
           },
         ];
 
@@ -398,65 +400,34 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featuredProjects.map((project, index) => (
+          <div className="flex flex-col gap-6">
+            {featuredProjects.map((project) => (
               <a
                 key={project.href}
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group overflow-hidden border-2 border-neutral-950 bg-[#f8f5ee] shadow-[10px_10px_0_#111827] transition-all duration-300 hover:-translate-y-2 hover:shadow-[16px_16px_0_#2563eb]"
+                className={`${projectLinkClass} grid lg:grid-cols-12`}
               >
-                <div className="relative min-h-72 overflow-hidden bg-neutral-950 p-6 spray-texture sm:p-8">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(37,99,235,0.5),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_50%)]" />
-                  <div className="relative flex min-h-56 items-center justify-center">
-                    <div
-                      className={`relative flex h-44 w-52 items-center justify-center rounded-4xl border-2 border-white/80 bg-blue-600 p-5 shadow-[12px_12px_0_rgba(255,255,255,0.12)] transition-transform duration-500 group-hover:scale-105 sm:h-52 sm:w-60 ${
-                        index === 0 ? "rotate-2 group-hover:rotate-3" : "-rotate-2 group-hover:-rotate-3"
-                      }`}
-                    >
-                      <div className="absolute inset-4 rounded-3xl border border-white/25" />
-                      <div
-                        className={`relative bg-white shadow-[6px_6px_0_rgba(15,23,42,0.22)] ${project.logoWrapClass}`}
-                      >
-                        {project.logo ? (
-                          <Image
-                            src={project.logo}
-                            alt={project.logoAlt}
-                            width={220}
-                            height={84}
-                            unoptimized={project.logo.endsWith(".svg")}
-                            className={`${project.logoClass} object-contain`}
-                          />
-                        ) : (
-                          <span
-                            className={
-                              project.visualClass ||
-                              "text-4xl font-black uppercase leading-none tracking-[-0.12em] text-neutral-950"
-                            }
-                          >
-                            {project.visual}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                <div className="lg:col-span-5">
+                  <ProjectBanner href={project.href} />
                 </div>
-
-                <div className="p-6 sm:p-8 lg:p-10">
-                  <div className="mb-5 inline-flex -rotate-1 bg-neutral-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-white">
-                    {project.category}
+                <div className="flex flex-col justify-between p-6 sm:p-8 lg:col-span-7 lg:p-12">
+                  <div>
+                    <div className="mb-5 inline-flex w-fit -rotate-1 bg-neutral-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-white">
+                      {project.category}
+                    </div>
+                    <div className="mb-4 font-mono text-xs font-black uppercase tracking-[0.22em] text-blue-600">
+                      {project.meta}
+                    </div>
+                    <h3 className="max-w-xl text-4xl font-black leading-[0.95] tracking-[-0.06em] transition-colors duration-300 group-hover:text-blue-600 sm:text-5xl">
+                      {project.title}
+                    </h3>
+                    <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-neutral-700">
+                      {project.description}
+                    </p>
                   </div>
-                  <div className="mb-4 font-mono text-xs font-black uppercase tracking-[0.22em] text-blue-600">
-                    {project.meta}
-                  </div>
-                  <h3 className="text-4xl font-black leading-none tracking-[-0.06em] text-neutral-950 transition-colors duration-300 group-hover:text-blue-600 sm:text-5xl">
-                    {project.title}
-                  </h3>
-                  <p className="mt-6 text-lg font-medium leading-relaxed text-neutral-700">
-                    {project.description}
-                  </p>
-                  <div className="mt-8 inline-flex items-center gap-3 text-lg font-black text-neutral-950 transition-all duration-300 group-hover:gap-5 group-hover:text-blue-600">
+                  <div className="mt-8 inline-flex w-fit items-center gap-3 self-start text-lg font-black transition-all duration-300 group-hover:gap-5 group-hover:text-blue-600">
                     <span>View live site →</span>
                   </div>
                 </div>
